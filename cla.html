@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculation</title>
+<style>
+legend {
+}
+p{
+	height: 20px;
+}
+fieldset{
+	width: 150px;
+}
+
+#calc {
+}
+
+#calc input[type=button] {
+	border: thin 1px ;
+	width: 25px;
+	text-align: center;
+	border-color:  #1ad1ff;
+}
+
+#win {
+	width: 145px;
+	background-color: #b3f0ff;
+	border: none;
+}
+</style>
+<script>
+function cal(num){
+    myform.win.value += num;
+    console.log(num);
+}	
+
+function answer(){
+    try{
+        myform.win.value = eval(document.myform.win.value);
+    }catch(e){alert('잘못된 연산오류 ㅋ')}
+}
+
+function clearcal(){
+    myform.win.value = "";
+}
+
+</script>
+</head>
+<body>
+<!-- 	맨처음에 폼테그는 무조건 action만 써봐서 착각함, 이곳에 네임속성을써줘야 자바스크립트에서 텍스트뷰에 값입력해줌 -->
+	<form name="myform" id="calc">
+		<fieldset >
+			<input type="text" id="win"> <br>
+			
+			<p>
+			<input type="button" value="1" onclick="cal('1')">
+			<input type="button" value="2" onclick="cal('2')">
+			<input type="button" value="3" onclick="cal('3')">
+			<input type="button" value="4" onclick="cal('4')">
+			<input type="button" value="5" onclick="cal('5')">
+			</p>
+			<p>
+			<input type="button" value="6" onclick="cal('6')">
+			<input type="button" value="7" onclick="cal('7')">
+			<input type="button" value="8" onclick="cal('8')">
+			<input type="button" value="9" onclick="cal('9')">
+			<input type="button" value="0" onclick="cal('10')">
+			</p>
+			<p>
+			<input type="button" value="/" onclick="cal('/')">
+			<input type="button" value="*" onclick="cal('*')">
+			<input type="button" value="-" onclick="cal('-')">
+			<input type="button" value="+" onclick="cal('+')">
+			<input type="button" value="=" onclick="answer()">
+			</p>
+			<p>
+			<input type="button" value="C" onclick="clearcal()">
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>
