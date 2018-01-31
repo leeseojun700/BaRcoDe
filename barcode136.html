@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>바코드 제작자가 남기는 말</h1>
+
+<button onclick="typeWriter()">놀러서 보기</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = '안녕하세요. 바코드입니다. 바코드 프로젝트는 메우 저에게 큰 일이였습니다. 어, 어디서부터 말을 해야 할지 모르겠네요..ㅎㅎ 제게 너무 도움되는 프로젝트였기에, 저는 감사함을 감출 수 없습니다. 우선 이 사이트많은 도움을 준 w3schools제작진 여러분께 감사를 전합니다. 그리고 제가 작업 할 수 있게 해준 github 제작진에게도 감사드리고, 유튜브를 도와주신 시오님과 스캔님께도 감사를 전합니다. 여러분 모두 감사합니다.'
+var speed = 70;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+</body>
+</html>
